@@ -157,10 +157,10 @@ const technologies: Technology[] = [
 ]
 
 const maturityColors = {
-  emerging: '#FF6B6B',
-  growing: '#4ECDC4',
-  mature: '#45B7D1',
-  declining: '#96CEB4'
+  emerging: '#FF6B35',
+  growing: '#F7931E',
+  mature: '#1E3A8A',
+  declining: '#6B7280'
 }
 
 export default function Index() {
@@ -204,9 +204,9 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-100">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b bg-white/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -214,8 +214,8 @@ export default function Index() {
                 <Icon name="Radar" className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Радар технологий</h1>
-                <p className="text-sm text-gray-600">РМК Диджитал</p>
+                <h1 className="text-2xl font-bold text-primary tracking-tight">Радар технологий</h1>
+                <p className="text-sm text-muted-foreground font-medium">РМК Диджитал</p>
               </div>
             </div>
             
@@ -384,7 +384,7 @@ export default function Index() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="relative w-full h-96 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg overflow-hidden">
+            <div className="relative w-full h-96 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden shadow-inner border">
               {/* Radar circles */}
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300">
                 <defs>
@@ -395,13 +395,13 @@ export default function Index() {
                 </defs>
                 
                 {/* Concentric circles */}
-                <circle cx="200" cy="150" r="60" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                <circle cx="200" cy="150" r="100" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                <circle cx="200" cy="150" r="140" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                <circle cx="200" cy="150" r="60" fill="none" stroke="rgba(30, 58, 138, 0.3)" strokeWidth="2" />
+                <circle cx="200" cy="150" r="100" fill="none" stroke="rgba(30, 58, 138, 0.25)" strokeWidth="2" />
+                <circle cx="200" cy="150" r="140" fill="none" stroke="rgba(30, 58, 138, 0.2)" strokeWidth="2" />
                 
                 {/* Grid lines */}
-                <line x1="200" y1="10" x2="200" y2="290" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="1" />
-                <line x1="60" y1="150" x2="340" y2="150" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="1" />
+                <line x1="200" y1="10" x2="200" y2="290" stroke="rgba(30, 58, 138, 0.15)" strokeWidth="1" />
+                <line x1="60" y1="150" x2="340" y2="150" stroke="rgba(30, 58, 138, 0.15)" strokeWidth="1" />
                 
                 {/* Technology dots */}
                 {filteredTechnologies.map((tech) => (
@@ -428,7 +428,7 @@ export default function Index() {
               </svg>
               
               {/* Legend */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-lg border">
                 <h4 className="text-sm font-semibold mb-2">Уровень зрелости</h4>
                 <div className="space-y-1">
                   {Object.entries(maturityColors).map(([level, color]) => (
